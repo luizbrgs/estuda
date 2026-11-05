@@ -48,3 +48,34 @@
     --ring: 240 4.9% 83.9%;
   }
 }
+
+
+/* Estuda: refinamento responsivo para celular e desktop */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { min-width: 320px; }
+  ::selection { background: hsl(var(--primary) / .18); }
+}
+@layer components {
+  main.container {
+    width: min(100% - 2rem, 1440px);
+    padding-top: clamp(1.25rem, 3vw, 2.5rem);
+    padding-bottom: 3rem;
+  }
+  [class*="rounded"] { scroll-margin-top: 5rem; }
+}
+@media (max-width: 640px) {
+  main.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+  button, [role="button"], a { -webkit-tap-highlight-color: transparent; }
+  input, textarea, select { max-width: 100%; }
+  table { display: block; max-width: 100%; overflow-x: auto; }
+}
+@media (min-width: 1024px) {
+  main.container { width: min(100% - 4rem, 1440px); }
+}

@@ -27,8 +27,8 @@ export const metadata: Metadata = {
       ? "https://turbo.t3.gg"
       : "http://localhost:3000",
   ),
-  title: "Quizlet Clone",
-  description: "Quizlet clone application built with turbo.t3.gg",
+  title: "Estuda",
+  description: "Estude com flashcards, conjuntos e revisões inteligentes.",
   openGraph: {
     title: "Quizlet Clone",
     description: "Quizlet clone application built with turbo.t3.gg",
@@ -48,7 +48,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const session = await auth();
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="pt-BR" suppressHydrationWarning>
       <body
         className={cn(
           "min-h-screen bg-background font-sans text-foreground antialiased",
